@@ -15,6 +15,7 @@ public class Cuenta {
     private Fecha fechaCreacion;
     private String nombreCliente;
     private Movimiento[] movimientos;
+    private int counter = 0;
 
     public Cuenta(int numCuenta, double saldoActual, Fecha fechaCreacion, String nombreCliente) {
         this.numCuenta = numCuenta;
@@ -68,14 +69,20 @@ public class Cuenta {
         this.movimientos = movimientos;
     }
     
-    public boolean obtMovimientos(){
+    /*Este fue el metodo que cree para insertar los
+    movimientos en el array*/
+    public void setMovimientoIndividual(Movimiento movimiento) {
+        this.movimientos[counter] = movimiento;
+        counter++;
+    }
+    
+    public void obtMovimientos(){
         for(int i=0; i<movimientos.length; i++){
             System.out.println("Movimiento "+(i+1)+": ");
             System.out.println("Fecha: "+movimientos[i].getFecha().getDia()+"/"+movimientos[i].getFecha().getMes()+"/"+movimientos[i].getFecha().getAnnio());
             System.out.println("Saldo previo: "+movimientos[i].getSaldoPrevio());
             System.out.println("Monto: "+movimientos[i].getMonto());
-            System.out.println("Tipo: "+movimientos[i].getTipo());
+            System.out.println("Tipo: "+movimientos[i].getTipo().getCodigo());
         }
-        return true;
     }
 }

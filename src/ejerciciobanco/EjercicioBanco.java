@@ -41,9 +41,17 @@ public class EjercicioBanco {
         c1.setSaldoActual(m12.getSaldoPrevio()-m12.getMonto());
         c2.setSaldoActual(m22.getSaldoPrevio()-m22.getMonto());
         
+        /*
+        Aquí meto los 4 movimientos en el array de cada cuenta
+        */
+        c1.setMovimientoIndividual(m11);
+        c1.setMovimientoIndividual(m12);
+        c2.setMovimientoIndividual(m21);
+        c2.setMovimientoIndividual(m22);
+        
         Banco banco= new Banco("POO", tipos, cuentas);
         
-           banco.obtInfoCuentas();
+        banco.obtInfoCuentas();
     }
     
 }

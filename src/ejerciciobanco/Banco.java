@@ -62,8 +62,9 @@ public class Banco {
             System.out.println("Numero de cuenta: "+cuentas[i].getNumCuenta());
             System.out.println("Fecha de creacion: "+cuentas[i].getFechaCreacion().getDia()+"/"+cuentas[i].getFechaCreacion().getMes()+"/"+cuentas[i].getFechaCreacion().getAnnio());
             System.out.println("Saldo actual: $"+cuentas[i].getSaldoActual());
-            //System.out.println("Movimientos: "+cuentas[i].getMovimientos()[0].getFecha().getDia());
-            System.out.println("Movimientos: "+cuentas[i].obtMovimientos());
+            System.out.println("Movimientos: "); 
+            //Modifiqué el tipo de metodo, lo cambié a void para que no imprimera true
+            cuentas[i].obtMovimientos();
         }
         return true;
     }
